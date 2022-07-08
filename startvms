@@ -1,0 +1,32 @@
+#!/bin/bash
+
+echo "List of vms: "
+echo "============="
+list=$(vboxmanage list vms | awk '{print $1}' | sed 's/"//g')
+no=0
+total=0
+for i in $list;
+do no=$((no+1)); echo $no. $i; total=$((total+1));
+done
+echo "============="
+read -p "Select vms to start (vms name): " vms
+if [[ ${vms} == ""  ]]
+then
+ echo "Please choose vms "
+ exit 0
+fi
+false=0
+for n in $list;
+do 
+ if [ $n != $vms ]; then 
+    #echo $vms $n; 
+    false=$((false+1)); 
+    if [ $false == $total ]; then
+      echo "There's was vms name $vms"
+      exit 0;
+    fi;
+ fi; 
+done
+echo "Starting ${vms}...."
+vboxmanage startvm ${vms} --type headless 
+echo "============="
