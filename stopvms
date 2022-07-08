@@ -5,7 +5,7 @@ echo "============="
 list=$(vboxmanage list runningvms | awk '{print $1}' | sed 's/"//g')
 if [[ $list == "" ]]
 then
- echo "There's are no runnings vms";
+ echo "There are no runnings vms";
  exit 0;
 fi
 no=0
@@ -27,7 +27,7 @@ do
     #echo $vms $n; 
     false=$((false+1)); 
     if [ $false == $total ]; then
-      echo "There's was vms name $vms"
+      echo "There are vms name $vms"
       exit 0;
     fi;
  fi; 
