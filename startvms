@@ -22,7 +22,7 @@ do
     #echo $vms $n; 
     false=$((false+1)); 
     if [ $false == $total ]; then
-      echo "There's was vms name $vms"
+      echo "There are no vms name $vms"
       exit 0;
     fi;
  fi; 
