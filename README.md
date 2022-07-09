@@ -1,4 +1,5 @@
-These scripts are for start and stop virtualbox vms, instead opening virtualbox
+These scripts are for start and stop virtualbox vms, instead opening virtualbox.
+
 These scripts are still on development, any bugs or error it's will be nice to report to us.
 
 How to:
